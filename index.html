@@ -1,0 +1,9 @@
+document.addEventListener('keydown', e => {
+  console.log(e);
+  const el = document.querySelector(`[data-key-code="${e.code}"]`);
+  if (!el) {
+    return;
+  }
+  el.classList.toggle('hidden');
+  el.querySelector('audio')[el.matches('.hidden') ? 'pause' : 'play']();
+});
